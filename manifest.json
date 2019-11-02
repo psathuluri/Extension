@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    
+    "name": "waitlist data page",
+    "description": "This extension shows the size of a waitlist",
+    "version": "1.0",
+    
+    "content_scripts": [
+        {
+            "matches": ["https://utdirect.utexas.edu/registrar/waitlist/"],
+            "css": ["main.css"]
+        }
+    ],
+    
+    
+    "page_action": {
+        "default_title": "Waitlists!"
+    }
+}
