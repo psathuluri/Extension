@@ -5,7 +5,7 @@ const url = "https://webhooks.mongodb-stitch.com/api/client/v2.0/app/waitlist-in
 console.log('Running rn');
 
 var x = document.getElementsByClassName("tbg");
-console.log(x.length);
+// console.log(x.length);
 for(var i = 0; i < x.length - 1; i++){
 	var table = x[i];
 
@@ -14,14 +14,14 @@ for(var i = 0; i < x.length - 1; i++){
 	var name = firstRow.innerText.split("|")[0];
 	var copy = (' ' + name).slice(1);
 	var num = copy.split(" ")[0];
-	console.log(num);
+	//console.log(num);
 	var fullName = name.substring(6,);
-	console.log(fullName);
+	// console.log(fullName);
 
 	var waitlist = fourthRow.innerText;
 	var waitArr = waitlist.split(" ");
 	var wait = waitArr[waitArr.length-1];
-	console.log(wait);
+	// console.log(wait);
 
 	var d = new Date();
 	var datestring = ("0" + d.getDate()).slice(-2) + "-" + ("0"+(d.getMonth()+1)).slice(-2) + "-" +
@@ -42,25 +42,29 @@ async function helper(num, fullName, wait, datestring)
 {
 	     //make json object to post
     var u = num.toString();
-	var data = 
-  	{"id":num, "class":fullName, "wait":wait, "time":datestring}
-	;
+	var data = {
+		"record": {
+  			"id":num, 
+  			"class":fullName, 
+  			"wait":wait, 
+  			"time":datestring
+  		}
+  	};
 
 	//console.log(data);    
 	console.log(JSON.stringify(data));
 
     const response = await fetch(url, { method: 'POST', // *GET, POST, PUT, DELETE, etc. 
-    mode: 'cors', // no-cors, *cors, same-origin
-     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached 
-     credentials: 'same-origin', // include, *same-origin, omit 
+    // mode: 'cors', // no-cors, *cors, same-origin
+     // cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached 
+     // credentials: 'same-origin', // include, *same-origin, omit 
      headers: { 
      	'Content-Type': 'application/json'
      	 // 'Content-Type': 'application/x-www-form-urlencoded',
      },
-     redirect: 'follow', // manual, *follow, error 
-     referrer: 'no-referrer', // no-referrer, *client
-      body: data
-      //body: JSON.stringify(data) // body data type must match "Content-Type" header
+     // redirect: 'follow', // manual, *follow, error 
+     // referrer: 'no-referrer', // no-referrer, *client
+      body: JSON.stringify(data) // body data type must match "Content-Type" header
      });
 
     response.json().then(data2 => {
