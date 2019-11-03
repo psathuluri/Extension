@@ -4,16 +4,14 @@
     "name": "waitlist data page",
     "description": "This extension shows the size of a waitlist",
     "version": "1.0",
+    "permissions": ["storage"],
     
     "content_scripts": [
         {
-            "matches": ["https://utdirect.utexas.edu/registrar/waitlist/"],
-            "css": ["main.css"]
+            "matches": ["https://utdirect.utexas.edu/registrar/waitlist/wl_see_my_waitlists.WBX/*"],
+            "js": ["content.js"]
         }
-    ],
+    ]
     
     
-    "page_action": {
-        "default_title": "Waitlists!"
-    }
 }
