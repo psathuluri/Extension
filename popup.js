@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', function() {
     var link = document.getElementById('btnOpenNewTab');
     // onClick's logic below:
     link.addEventListener('click', function() {
-        var newURL = "http://utwaiting.tech/";
+        var newURL = "http://avacadra.com/";
         chrome.tabs.create({ url: newURL });
     });
 });
