@@ -3,7 +3,7 @@
     
     "name": "Waitlist of Lucidity",
     "description": "This extension shows the size of a waitlist",
-    "version": "1.0",
+    "version": "1.1",
     "permissions": ["storage"],
     "browser_action": {
     "default_popup": "popup.html"
@@ -13,6 +13,9 @@
             "matches": ["https://utdirect.utexas.edu/registrar/waitlist/wl_see_my_waitlists.WBX/*"],
             "js": ["content.js"]
             
+        }, {
+            "matches": ["https://utdirect.utexas.edu/apps/registrar/course_schedule/*"],
+            "js": ["display.js"]
         }
     ]
     
