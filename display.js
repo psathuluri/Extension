@@ -12,6 +12,9 @@ cell.innerHTML = "<th>Waitlist size</th>";
 var cell2 = row.insertCell(7);
 cell2.innerHTML = "<th>Last Updated</th>";
 
+var cell3 = row.insertCell(8);
+var cell4 = row.insertCell(9);
+
 helper();
 
 async function helper(){

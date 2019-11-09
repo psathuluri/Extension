@@ -15,7 +15,7 @@
             
         }, {
             "matches": ["https://utdirect.utexas.edu/apps/registrar/course_schedule/*"],
-            "js": ["display.js", "moment-develop/moment.js"]
+            "js": ["display.js"]
         }
     ]
     
