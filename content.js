@@ -70,7 +70,6 @@ async function helper(num, fullName, wait, datestring)
     response.json().then(data2 => {
     	
     	console.log(data2);
-    	console.log("*****");
     });  
     
 }

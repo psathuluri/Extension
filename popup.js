@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', function() {
     var link3 = document.getElementById('btnCourse');
     // onClick's logic below:
     link.addEventListener('click', function() {
-        var newURL = "http://avacadra.com/";
+        var newURL = "http://avacadra.com/utwaitlisttracker";
         chrome.tabs.create({ url: newURL });
     });
     link2.addEventListener('click', function() {

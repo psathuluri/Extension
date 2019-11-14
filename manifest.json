@@ -3,7 +3,7 @@
     
     "name": "Waitlist of Lucidity",
     "description": "Shows waitlist sizes for UT Austin Registration",
-    "version": "1.201",
+    "version": "1.202",
     "permissions": ["storage"],
     "browser_action": {
     "default_popup": "popup.html"
